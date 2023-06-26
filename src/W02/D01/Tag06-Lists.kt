@@ -52,7 +52,7 @@ fun main(){
     var threeInList = numbers.contains(3) // gibt true zurück, die 3 ist in der Liste
 
     // get: gibt ein Int, den Index, zurück
-    var numberAtIndexTen = numbers.get(10) // speichert den Index, an dem die Zahl 10 steht, in numberAtIndexTen. gibt 5 zurück, weil die 5 am 10. Index steht
+    var numberAtIndexTen = numbers.get(10) // speichert die Zahl, die an Index 10 steht, in numberAtIndexTen. gibt 5 zurück, weil die 5 am 10. Index steht
 
     // subList()
     var subList = numbers.subList(0,2) // gibt die Elemente von Index 0 bis ausschließlich Index 2 zurück

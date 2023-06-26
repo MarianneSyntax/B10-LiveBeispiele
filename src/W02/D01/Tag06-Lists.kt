@@ -40,18 +40,31 @@ fun main(){
     println(numbers[13])
 
 
+    // IndexOutOfBounds Exception: Zum Ausprobieren Einkommentieren
+    // diese Zeile:
+    println(numbers[numbers.size])
+    // ist das gleiche wie:
+    println(numbers[14])
+    // die Liste geht aber nur bis Index 13. Hier wird eine IndexOutOfBoundsException getriggert.
 
-    // IndexOutOfBounds Exception
+    // contains() gibt true oder false zurück
+    var thirteenInList = numbers.contains(13) // gibt false zurück und speichert das false in der Variable, die 13 ist nicht in der Liste
+    var threeInList = numbers.contains(3) // gibt true zurück, die 3 ist in der Liste
 
-    // contains()
-
-    // get
+    // get: gibt ein Int, den Index, zurück
+    var numberAtIndexTen = numbers.get(10) // speichert den Index, an dem die Zahl 10 steht, in numberAtIndexTen. gibt 5 zurück, weil die 5 am 10. Index steht
 
     // subList()
+    var subList = numbers.subList(0,2) // gibt die Elemente von Index 0 bis ausschließlich Index 2 zurück
+    println(subList) // druckt [101, 98], Index 2 ist nicht mit inbegriffen, es ist die obere Grenze
 
     // reversed()
+    var reversedNumbers = numbers.reversed() // macht eine umgekehrte Kopie der Liste
+    println(reversedNumbers)
 
     // sorted()
+    var sortedNumbers = numbers.sorted() // sortiert eine Kopie der Liste aufsteigend
+    println(sortedNumbers)
 
 
 

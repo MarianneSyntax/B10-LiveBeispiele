@@ -20,7 +20,8 @@ fun main(){
 
     // über [] auf index zugreifen, in variable speichern
     var firstDay = WEEK_DAYS[0]
-    println(firstDay)
+    println(firstDay) // druckt den ersten Tag, Montag, aus
+
     // ohne variable direkt den inhalt des index ausdrucken:
     println(WEEK_DAYS[6])
 
@@ -32,7 +33,9 @@ fun main(){
     println(numbers[0])
 
     // über .size-1 auf letzten Index der Liste zugreifen
+    // .size gibt die Länge als Integer zurück.
     println("Länge der Liste numbers: ${numbers.size}")
+    // diese Länge minus 1 liefert uns den letzten Index, weil der Index immer 1 kleiner ist als die Länge
     println(numbers[numbers.size-1])
     println(numbers[13])
 

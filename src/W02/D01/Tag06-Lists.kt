@@ -42,9 +42,9 @@ fun main(){
 
     // IndexOutOfBounds Exception: Zum Ausprobieren Einkommentieren
     // diese Zeile:
-    println(numbers[numbers.size])
+    //println(numbers[numbers.size])
     // ist das gleiche wie:
-    println(numbers[14])
+    //println(numbers[14])
     // die Liste geht aber nur bis Index 13. Hier wird eine IndexOutOfBoundsException getriggert.
 
     // contains() gibt true oder false zurück

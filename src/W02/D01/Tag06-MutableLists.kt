@@ -32,8 +32,27 @@ fun main(){
     var index = 2
     println(horrorMovies[index])
 
-    // auch mit mutableLists geht .size
+    // auch mit MutableLists gehen .size und alle anderen lesenden Operationen, die auf Lists möglich sind:
     var horrorMoviesSize : Int = horrorMovies.size
     println("Die Länge der Liste HorrorMovies ist: $horrorMoviesSize")
 
+    // contains() gibt true oder false zurück
+    var krampusInList = horrorMovies.contains("Krampus") // gibt false zurück und speichert das false in der Variable, Krampus ist nicht in der Liste
+    var screamInList = horrorMovies.contains("Scream") // gibt true zurück, Scream ist in der Liste
+
+    // get: gibt ein Int, den Index, zurück
+    var movieAtIndexThree = horrorMovies.get(3) // speichert den Film, der an Index 3 steht, in movieAtIndexThree.
+
+
+    // subList()
+    var subList = horrorMovies.subList(0,2) // gibt die Elemente von Index 0 bis ausschließlich Index 2 zurück
+    println(subList) // druckt [Old, Halloween]. Index 2 ist nicht mit inbegriffen, es ist die obere Grenze.
+
+    // reversed()
+    var reversedNumbers = horrorMovies.reversed() // macht eine umgekehrte Kopie der Liste
+    println(reversedNumbers)
+
+    // sorted()
+    var sortedNumbers = horrorMovies.sorted() // sortiert eine Kopie der Liste aufsteigend (bei Strings: alphabetisch)
+    println(sortedNumbers)
 }

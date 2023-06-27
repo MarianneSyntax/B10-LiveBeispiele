@@ -51,7 +51,7 @@ fun main(){
     var thirteenInList = numbers.contains(13) // gibt false zurück und speichert das false in der Variable, die 13 ist nicht in der Liste
     var threeInList = numbers.contains(3) // gibt true zurück, die 3 ist in der Liste
 
-    // get: gibt ein Int, den Index, zurück
+    // get: gibt ein Element zurück, das am übergebenen Int steht
     var numberAtIndexTen = numbers.get(10) // speichert die Zahl, die an Index 10 steht, in numberAtIndexTen. gibt 5 zurück, weil die 5 am 10. Index steht
 
     // subList()
@@ -65,7 +65,5 @@ fun main(){
     // sorted()
     var sortedNumbers = numbers.sorted() // sortiert eine Kopie der Liste aufsteigend
     println(sortedNumbers)
-
-
 
 }

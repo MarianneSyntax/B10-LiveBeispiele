@@ -11,19 +11,16 @@ fun main(){
     // auch konstanten können null sein:
     val NULL_CONSTANT: String? = null
 
-    // SAFE CALL: den benutzen wir best practice mässig immer, umgeht programm absturz
+    // SAFE CALL: den benutzen wir best practice mässig immer, umgeht programm absturz, falls null drin steht
     var integer: Int? = null
     var integerToDouble = integer?.toDouble()
 
     integerToDouble = 1.5
 
-    // NON NULL ASSERTED CALL: vorsicht, gefahr: bringt die app zum abstürzen. zum gezielten fehler suchen nutzbar
+    // NON NULL ASSERTED CALL: vorsicht, gefahr: bringt die app zum abstürzen, falls doch null in der variable steht. zum gezielten fehler suchen nutzbar
     var double: Double? = 2.0
     var doubleToInteger = double!!.toInt()
     println(doubleToInteger)
-
-
-
 
 
 

@@ -5,7 +5,7 @@ fun main(){
     // liste anlegen: ShoppingList
     var shoppingList: List<String> = listOf("Aepfel", "Bananen", "Kirschen", "Mangos", "Litschi", "Kaffee", "Orangen", "Pizza")
 
-    // liste in mutable liste umwandeln:
+    // liste in mutable (veränderbare) liste umwandeln, in neuer variable speichern:
     var mutableShoppingList = shoppingList.toMutableList()
 
     // LESENDE OPERATIONEN: AUF LISTS UND MUTABLE LISTS
@@ -17,10 +17,10 @@ fun main(){
     // size in lastIndex speichern
     var lastIndex: Int = shoppingList.size-1
 
-    // wird das hier klappen? (size als lastIndex)
+    // wird das hier klappen? (size als lastIndex) -> jetzt ja, da wir size-1 gesetzt haben
     var lastElement = shoppingList[lastIndex]
 
-    // alternative: last()
+    // alternative zum letzten index: last()
     var anotherLastElement = shoppingList.last()
 
 
@@ -63,7 +63,7 @@ fun main(){
     // filter: Mit Modulo
     var numbers = listOf(11, 20, 31, 40, 51, 60, 71, 80, 91, 100)
 
-    // 11 % 2 --> wie oft passt die 2 in die 11? --> sie passt 5 mal rein, das ergibt aber nur 10. -> der Rest, um die 11 zu erreichen, ist 1. weil 10+1=11
+    // 11 % 2 = 1 --> wie oft passt die 2 in die 11? --> sie passt 5 mal rein, das ergibt aber nur 10. -> der Rest, um die 11 zu erreichen, ist 1. weil 10+1=11
     var filteredNumbers = numbers.filter { (it%2).equals(0) }
 
     // subList: gibt liste vom 1. index bis AUSschliesslich den 2. Parameter aus

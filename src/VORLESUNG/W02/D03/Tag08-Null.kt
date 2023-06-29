@@ -1,4 +1,4 @@
-package W02.D03
+package VORLESUNG.W02.D03
 
 fun main(){
 

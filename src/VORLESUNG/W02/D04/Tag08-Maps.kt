@@ -1,4 +1,4 @@
-package W02.D04
+package VORLESUNG.W02.D04
 
 fun main(){
 

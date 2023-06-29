@@ -63,7 +63,7 @@ fun main(){
     // filter: Mit Modulo
     var numbers = listOf(11, 20, 31, 40, 51, 60, 71, 80, 91, 100)
 
-    // 11 % 2 = 1 --> wie oft passt die 2 in die 11? --> sie passt 5 mal rein, das ergibt aber nur 10. -> der Rest, um die 11 zu erreichen, ist 1. weil 10+1=11
+    // 11 % 2 = 1 --> wie oft passt die 2 in die 11? --> sie passt 5 mal rein, das ergibt aber nur 10. -> der Rest, um die 11 zu erreichen, ist 1. Modulo = Rest
     var filteredNumbers = numbers.filter { (it%2).equals(0) }
 
     // subList: gibt liste vom 1. index bis AUSschliesslich den 2. Parameter aus

@@ -67,7 +67,7 @@ fun main(){
 
     // .entries gibt alle einträge zurück
     var allEntries = articles.entries
-    // println(allEntries)
+    println(allEntries)
 
     // wichtige schreibende Map Operationen (nur auf MutableMaps möglich)
 

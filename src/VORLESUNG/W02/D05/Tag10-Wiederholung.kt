@@ -89,12 +89,13 @@ fun main() {
         // auf eine liste in der map zugreifen und einen wert entfernen/verändern: wir wollen "Speak Now" löschen
 
             // 1. die liste anhand des keys rausholen, zwischenspeichern
-
+            var taylorSongs: MutableList<String>? = discographies["Taylor Swift"]?.toMutableList()
 
             // 2. das element aus der liste entfernen
-
+            taylorSongs?.remove("Speak Now")
 
             // 3. die veränderte Liste in den passenden Value schreiben
+            discographies["Taylor Swift"] = taylorSongs!!.toList()
 
 
 

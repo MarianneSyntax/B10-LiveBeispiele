@@ -21,7 +21,6 @@ fun main(){
     var shrekMovies: List<String> = listOf("Shrek", "Shrek 2", "Shrek The Third", "Shrek 4ever after")
     var marvelMovies: MutableList<String> = mutableListOf("Iron Man", "The Incredible Hulk", "Iron Man 2", "Thor", "Captain America: The First Avenger", "The Avengers")
 
-
     // NEUER STOFF: MAPS
 
     // Map anlegen

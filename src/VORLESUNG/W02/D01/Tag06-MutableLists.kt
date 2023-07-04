@@ -1,3 +1,5 @@
+package VORLESUNG.W02.D01
+
 fun main(){
 
     // MUTABLE Listen: sind veränderbar. gleiche Syntax wie Lists, nur mit "mutable" davor

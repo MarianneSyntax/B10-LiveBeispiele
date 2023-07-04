@@ -1,4 +1,4 @@
-package VORLESUNG.W03
+package VORLESUNG.W03.D01
 
 // Eine Liste mit Karten
 var kartenDeck: List<String> = listOf(
@@ -113,7 +113,7 @@ fun main(){
     // Niedrigste Karte abwerfen
     println("----------------------------------")
 
-    
+
     // Spieler 1 (variante 1)
     var spieler1Werte = mutableListOf(
         karteZuWert[spieler1Hand[0]]!!,
@@ -125,7 +125,7 @@ fun main(){
     var niedrigsterWert = spieler1Werte.min()
     var index = spieler1Werte.indexOf(niedrigsterWert)
     var niedrigsteKarte = spieler1Hand[index]
-    
+
     // Karte abwerfen
     spieler1Hand.remove(niedrigsteKarte)
     spieler1Werte.remove(niedrigsterWert)
@@ -135,25 +135,25 @@ fun main(){
     spieler1Hand.add(neueKarte)
     var neuerWert = karteZuWert[neueKarte]!!
     spieler1Werte.add(neuerWert)
-    
+
     // Neue Gesamtpunktzahl
     spieler1GesamtPunkte = spieler1GesamtPunkte - niedrigsterWert + neuerWert
-    // oder: 
+    // oder:
     spieler1GesamtPunkte = spieler1Werte.sum()
-    
+
     println("$spieler1 wirft ab: $niedrigsteKarte, und zieht dafür $neueKarte")
     println("$spieler1 hat nun folgende Hand:")
     println(spieler1Hand)
     println("Gesamtpunktzahl: $spieler1GesamtPunkte \n")
-    
+
     // Spieler 2 (variante 2)
     niedrigsterWert = spieler2Werte.min()
     niedrigsteKarte = spieler2Hand.removeAt(spieler2Werte.indexOf(niedrigsterWert))
-    
+
     neueKarte = kartenStapel.removeFirst()
     spieler2Hand.add(neueKarte)
     neuerWert = karteZuWert[neueKarte]!!
-    
+
     spieler2Wert += neuerWert - niedrigsterWert
 
     println("$spieler2 wirft ab: $niedrigsteKarte, und zieht dafür $neueKarte")

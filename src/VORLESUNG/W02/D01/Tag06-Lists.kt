@@ -1,3 +1,5 @@
+package VORLESUNG.W02.D01
+
 fun main(){
 
     // leere liste anlegen

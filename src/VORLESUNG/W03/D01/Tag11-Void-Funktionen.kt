@@ -1,10 +1,4 @@
-package VORLESUNG.W03
-
-import VORLESUNG.W03.D01.calculateAge
-import VORLESUNG.W03.D01.calculateSurface
-import VORLESUNG.W03.D01.perimeter
-import java.lang.Math.PI
-import kotlin.math.roundToInt
+package VORLESUNG.W03.D01
 
 
 // Greeting in Funktion auslagern
@@ -22,19 +16,7 @@ fun main(){
     println("------")
     println("Ende Funktionsaufruf.")
 
-   calculateSurface()
-   perimeter()
-   calculateAge()
+    calculateSurface()
+    perimeter()
+    calculateAge()
 }
-
-
-
-
-
-
-
-
-
-
-
-

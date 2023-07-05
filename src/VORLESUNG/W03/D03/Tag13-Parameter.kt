@@ -47,6 +47,13 @@ fun calcPrice(anzahlProdukte: Int, preisProProdukt: Double, rabatt: Double = 0.0
     return discountPreis
 }
 
+// 2. Funktion mit default Parameter: wenn kein Name übergeben wird, wird Guest gedruckt
+// default parameter 2
+fun greet(name: String = "Guest") {
+    println("Hello, $name!")
+}
+
+
 fun makePancakes(eggs: Int, flour: Int, water: Int, milk: Int){
     println("$eggs Eier und $flour g Mehl werden vermischt...")
     Thread.sleep(5000) // 1000 milli = 1 Sekunde
@@ -115,39 +122,7 @@ fun main(){
     list.add(0,50)
     list.add(50)
 
-
-
-
-
-
-
-
-
-    // erdbeeren: kosten 2.99 pro Korb
-
-    // Beispiel: Parameter, der nicht innerhalb der Funktion verändert werden kann
-
-
-
-    // eine funktion als parameter übergeben
-
 }
 
-
-
-// multiplizieren, Ergebnis returnen
-
-
-
-// 1. Funktion mit Parameter: greeting
-
-
-
-
-
-// default parameter
-
-
-// default parameter 2
 
 

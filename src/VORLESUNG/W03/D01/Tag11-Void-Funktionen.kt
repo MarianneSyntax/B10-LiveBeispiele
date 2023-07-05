@@ -1,5 +1,7 @@
 package VORLESUNG.W03.D01
-
+//import VORLESUNG.W03.D01.calculateAge
+import VORLESUNG.W03.D01.calculateSurface
+import VORLESUNG.W03.D01.perimeter
 
 // Greeting in Funktion auslagern
 fun printGreeting(){
@@ -18,5 +20,5 @@ fun main(){
 
     calculateSurface()
     perimeter()
-    calculateAge()
+   // calculateAge()
 }

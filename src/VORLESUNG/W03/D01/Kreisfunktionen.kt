@@ -1,6 +1,7 @@
 package VORLESUNG.W03.D01
 
 import kotlin.math.roundToInt
+import VORLESUNG.W03.D01.perimeter
 
 // Fläche eines Kreises. Formel: r * r * pi
 fun calculateSurface(){

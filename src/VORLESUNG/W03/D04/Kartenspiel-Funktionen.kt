@@ -121,7 +121,6 @@ fun main(){
     player2Values.clear()
     getHandValues(player1Name,player1Hand,karteZuWert,player1Values)
     getHandValues(player2Name,player2Hand,karteZuWert,player2Values)
-
 }
 
 fun pullCard(playerName: String, kartenStapel: MutableList<String>, playerHand: MutableList<String>){
@@ -136,9 +135,6 @@ fun pullCard(playerName: String, kartenStapel: MutableList<String>, playerHand: 
     // 2. Version
     //player2Hand.add(kartenStapel.removeFirst())
     println("$playerName Hand mit neuer Karte: $playerHand")
-
-
-
 }
 
 fun getHandValues(playerName: String, playerHand: MutableList<String>, karteZuWert: Map<String, Int>, playerValues: MutableList<Int>){
@@ -174,7 +170,6 @@ fun removeMin(playerName: String, playerHand: MutableList<String>, playerValues:
 
     // kurze Variante:
     //playerValues.removeAt(playerValues.indexOf(playerValues.min()))
-
 }
 
 

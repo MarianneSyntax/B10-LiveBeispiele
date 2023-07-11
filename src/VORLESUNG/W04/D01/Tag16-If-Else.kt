@@ -11,10 +11,6 @@ fun main() {
     val age = readln().toInt()
     clubIdCheck(age)
 
-    // Gruß abhängig von der Uhrzeit
-
-    // ist Zahl gerade?
-
 }
 
 fun giveWeatherFeedback(isRaining: Boolean, isSunShining: Boolean){
@@ -38,7 +34,7 @@ fun clubIdCheck(age: Int){
     else if (age > 18) {
         println("Du bist älter als 18, du darfst rein!")
         if (age > 40){
-            println("Wow du bist voll alt")
+            println("Ü40 Party ist erst nächste Woche... aber komm rein.")
         }
         if (age > 100) {
             println("Wow was machst du noch im Club, wieso lebst du überhaupt noch?")

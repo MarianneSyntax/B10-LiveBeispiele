@@ -3,17 +3,13 @@ package VORLESUNG.W04.D02
 
 fun main(){
 
-    // User validieren: && und !
-
-
-
     // Zahl gerade?
     var number = 5.0
-    //isNumberEven(number)
+    isNumberEven(number)
 
-    // Dream Car?
-    //traumAuto()
-    //weatherFeedback()
+    // Dream Car
+    traumAuto()
+    weatherFeedback()
 
     var anzahlVersuche: Int = 1
     println("Usernamen eingeben...")

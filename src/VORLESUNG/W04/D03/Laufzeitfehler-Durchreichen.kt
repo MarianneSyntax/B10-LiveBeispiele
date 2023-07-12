@@ -24,7 +24,12 @@ fun functionB(): Int {
 }
 
 fun main(){
-   var x = functionB()
-    println(x)
     // hier haben wir kein try catch, das heißt, das Programm wird beim main()-Aufruf von functionB abstürzen!
+    //try {
+        var x = functionB()
+        println(x)
+//    } catch (e: Exception){
+//        println("Exception caught in main: $e")
+//    }
+
 }

@@ -50,14 +50,14 @@ fun main(){
     // falls das produkt bereits im sortiment ist: den preis einfach aktualisieren
     if (newProduct in sortiment) {
         println("Das Produkt existiert bereits")
-        if (sortiment[newProduct] != newPrice) {
-            sortiment[newProduct] = newPrice
-            println("Der Preis wurde aktualisiert!")
+            if (sortiment[newProduct] != newPrice) {
+                sortiment[newProduct] = newPrice
+                println("Der Preis wurde aktualisiert!")
+            }
         } else { // abfangen, dass ein neues Produkt hinzugefügt wird
             sortiment[newProduct] = newPrice
             println("Das Produkt $newProduct wurde neu hinzugefügt.")
 
         }
 
-    }
 }

@@ -50,17 +50,6 @@ fun main(){
     if (!user1LoggedIn && !user2LoggedIn){ // !(user1Loggedin || user2LoggedIn)
         println("Es ist niemand eingeloggt, Login-Screen anzeigen...")
     }
-
-
-
-
-
-
-
-
-
-
-
 }
 
 

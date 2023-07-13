@@ -1,8 +1,16 @@
 package CHECKPOINTS.WS4D01
 
+import kotlin.random.Random
+
+
+fun randomPrice():Double{
+    return Random.nextDouble(from = 2.0, until = 5.0)
+}
+
 fun main() {
 
 
+    println(randomPrice())
     val passwordFromInput = readln()
 
 

@@ -5,7 +5,7 @@ package VORLESUNG.W04.D03
 
 fun functionA(): Int {
     try {
-        val result = 10 / 0
+        val result: Int = 10 / 0
         println("Result in functionA : $result")
         return result
     } catch (e: Exception) {

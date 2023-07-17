@@ -1,5 +1,7 @@
 package CHECKPOINTS
 
+import CHECKPOINTS.Musterloesungen.Videothek.filmListe
+
 // Wenn ihr die Funktionen printen wollt --> dann müsst ihr nur an den richtigen Stellen die Kommentare wegmachen
 
 
@@ -28,7 +30,13 @@ fun addition() {            // Funktion erstellen
     zahl1 + zahl2
 }
 fun main(){
-    addition()              // Funktion aufrufen
+    var lieblingsFilme: List<String> = listOf("Batman", "Breaking Bad", "Attack on Titan", "Planet der Affen")
+    var i = 0
+    repeat(lieblingsFilme.size) {
+        var film = lieblingsFilme[i]
+        println(film)
+        i++
+    }
 }
 
 

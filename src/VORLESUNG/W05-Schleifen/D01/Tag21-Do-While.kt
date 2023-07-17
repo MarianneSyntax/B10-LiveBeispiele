@@ -3,28 +3,28 @@ package VORLESUNG.`W05-Schleifen`.D01
 fun main() {
    // doWhileNumber()
    // doWhileString()
-    doWhileBoolean()
-   // doWhileFruitsList()
+   // doWhileBoolean()
+    doWhileMovieList()
 }
 
-fun doWhileFruitsList() {
+fun doWhileMovieList() {
     // Elemente aus Liste entfernen, bis nur noch 1 übrig ist
-    var firstIndex = 0
-    val fruits = mutableListOf("Apples", "Oranges", "Cherries", "Watermelon", "Mango", "Strawberries")
+    val movies = mutableListOf("Inception", "Tenet", "Dunkirk", "Memento", "The Dark Knight")
+    var index = movies.size-1
 
     do {
-        println("Zu entfernendes Element: ${fruits[firstIndex]}")
-        fruits.removeAt(firstIndex)
-        println("Länge der Liste nach Entfernen: ${fruits.size}")
-        println("Übrige Elemente in der Liste: $fruits")
-    } while (firstIndex < fruits.size-1)
+        println("Zu entfernendes Element: ${movies[index]}")
+        movies.removeAt(index)
+        println("Länge der Liste nach Entfernen: ${movies.size}")
+        println("Übrige Elemente in der Liste: $movies")
+        index--
+    } while (index >0)
 
-    println("Letztes übriges Element in der Liste: $fruits")
+    println("Letztes übriges Element in der Liste: $movies")
 }
 
 fun doWhileBoolean() {
     var boolean = false
-
 
     do {
         println("True or False? ... ")
@@ -57,4 +57,5 @@ fun doWhileString(){
     println("Hello, $input!")
 
 }
+
 

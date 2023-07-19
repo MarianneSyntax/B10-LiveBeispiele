@@ -49,7 +49,7 @@ fun countPizzaType(pizzaList: MutableList<String>, pizzaType: String){
 // mit Indizes: wir greifen auf den Index zu, nicht das Element, das darin liegt:
 fun countPizzaTypeWithIndices(pizzaList: MutableList<String>, pizzaType: String){
     var counter = 0
-    for (i in pizzaList.indices){ // pizza = nicht direkt das Element in der Liste, also ein String, SONDERN: der Index
+    for (i in pizzaList.indices){ // i = nicht direkt das Element in der Liste, also ein String, SONDERN: der Index
         // WENN pizza = der übergebene PizzaTyp ist, dann einen Counter erhöhen
         if (pizzaList[i] == pizzaType) {
             println("$pizzaType gefunden an Stelle $i in der Liste!")

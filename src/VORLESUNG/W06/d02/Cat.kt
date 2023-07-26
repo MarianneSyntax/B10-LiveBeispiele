@@ -21,12 +21,9 @@ class Cat(
         println("Miau! Neue Katzeninstanz namens $name erstellt.")
     }
 
-    // zum Thema this: weshalb man es benutzen sollte: Namenskonflikt
     fun changeName(name: String){
         this.name = name
 
     }
-
-
 
 }

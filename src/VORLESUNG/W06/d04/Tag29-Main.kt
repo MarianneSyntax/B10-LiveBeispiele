@@ -40,11 +40,14 @@ fun main() {
 
     supermarkt.printFleisch()
     supermarkt.printObst()
+    supermarkt.printGemüse()
 
 
     // CAST MIT "AS"  fleischVariable as Lebensmittel
-    val rinderfleisch = supermarkt.lebensmittelListe[0] as Fleisch // ohne as Fleisch ist rinderfleisch ein Lebensmittel
-    rinderfleisch.braten()
+    val rinderfleisch = supermarkt.lebensmittelListe[0] as? Fleisch // ohne as Fleisch ist rinderfleisch ein Lebensmittel
+    if (rinderfleisch != null) {
+        rinderfleisch.braten()
+    }
 
 
 

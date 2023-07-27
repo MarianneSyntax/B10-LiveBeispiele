@@ -5,12 +5,15 @@ class Supermarkt {
 
     init {
         addLebensmittelList(listOf(
-            Lebensmittel("Joghurt",1.49),
             Fleisch("Rind",8.99,"Kuh"),
+            Lebensmittel("Joghurt",1.49),
             Fleisch("Hühnerbrust","Huhn"),
+            Gemuese("Brokkoli"),
+            Gemuese("Karotten",1.99,30),
             Obst("Kirsche"),
             Obst("Mandarine"),
-            Obst("Kiwi")
+            Gemuese("Paprika"),
+            Obst("Kiwi"),
             )
         )
 
@@ -50,6 +53,11 @@ class Supermarkt {
         }
         // alternative:
         //lebensmittelListe.forEach { if (it is Fleisch) println(it.name) }
+    }
+
+    fun printGemüse() {
+        println("-----Print Gemüse:-----")
+        lebensmittelListe.forEach { if (it is Gemuese) println(it.name) }
     }
 
 }

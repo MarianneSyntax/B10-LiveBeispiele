@@ -1,10 +1,13 @@
 package VORLESUNG.W06.d03
 
-class Student(var name: String, var age: Int) {
+open class Person(var name: String)
 
-    init {
+class Student: Person {
+    var age: Int = 0
+    constructor(name: String, age: Int) : super(name){
         println("Primärer Konstruktor aufgerufen: Name = $name, Alter = $age")
     }
+
 
     // Sekundärer Konstruktor, der den primären Konstruktor aufruft
     constructor(name: String) : this(name, 0) {

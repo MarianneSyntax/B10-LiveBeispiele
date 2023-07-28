@@ -1,26 +1,37 @@
 package VORLESUNG.W06.d05.Fahrzeuge
 
-class Fahrzeugverleih {
+class Fahrzeigverleih {
 
-    var alleFahrzeuge: MutableList<Fahrzeug> = mutableListOf()
+    private var alleFahrzeuge: MutableList<Fahrzeug> = mutableListOf()
     private var alleLandFahrzeuge: MutableList<LandFahrzeug> = mutableListOf()
+    private var alleWasserFahrzeuge: MutableList<WasserFahrzeug> = mutableListOf()
 
     init {
         alleFahrzeuge.addAll(
             mutableListOf(
                 Fahrzeug("BMW"),
-                LandFahrzeug("Motorrad"),
+                WasserFahrzeug("Schiff",90,800.0),
+                WasserFahrzeug("Segelboot"),
+                LandFahrzeug("Buggy"),
                 LandFahrzeug("Bus"),
-                LandFahrzeug("VW"),
-                LandFahrzeug("SUV"),
-                LandFahrzeug("Stadtbus",100,50000.0,8),
-                Fahrzeug("Motorrad",2),
-                Fahrzeug("VW Bus",100,8999.99,4),
-                Fahrzeug("Toyota Auto")
-            )
+                Zweirad("motorrad"),
+                Zweirad("Fahrrad"),
+                Zweirad("Roller"),
+                Yacht("Spirit of the Sun"),
+                Yacht("Sea Lion",99,450.0),
+
+                )
         )
         println("---Alle Fahrzeuge:---")
-        printFahrzeuge(alleFahrzeuge)
+        alleFahrzeuge.forEach { println(it.bezeichner) }
+
+        println("---Alle Wasserfahrzeuge:---")
+        for (fahrzeug in alleFahrzeuge){
+            if (fahrzeug is WasserFahrzeug){
+                alleWasserFahrzeuge.add(fahrzeug)
+            }
+        }
+        printFahrzeuge(alleWasserFahrzeuge)
 
         println("---Alle Landfahrzeuge:---")
         for (fahrzeug in alleFahrzeuge){
@@ -29,43 +40,44 @@ class Fahrzeugverleih {
             }
         }
         printFahrzeuge(alleLandFahrzeuge)
-
     }
 
     fun addFahrzeug(fahrzeug: Fahrzeug){
         alleFahrzeuge.add(fahrzeug)
-        if (fahrzeug is LandFahrzeug) {
-            alleLandFahrzeuge.add(fahrzeug)
-        }
+        if (fahrzeug is WasserFahrzeug) alleWasserFahrzeuge.add(fahrzeug)
+        else if (fahrzeug is LandFahrzeug) alleLandFahrzeuge.add(fahrzeug)
     }
 
     fun removeFahrzeug(fahrzeug: Fahrzeug){
         alleFahrzeuge.remove(fahrzeug)
-        if (fahrzeug is LandFahrzeug) {
-            alleLandFahrzeuge.remove(fahrzeug)
-        }
+        if (fahrzeug is WasserFahrzeug) alleWasserFahrzeuge.remove(fahrzeug)
+        else if (fahrzeug is LandFahrzeug) alleLandFahrzeuge.remove(fahrzeug)
     }
 
     fun vermieten(fahrzeug: Fahrzeug){
-        println("Fahrzeug ${fahrzeug.bezeichner} wird vermietet...")
+        println("${fahrzeug.bezeichner} wird ausgeliehen.")
         fahrzeug.istVermietet = true
-        println("${fahrzeug.bezeichner} ist vermietet? -> ${fahrzeug.istVermietet}")
     }
 
     fun zurueckBringen(fahrzeug: Fahrzeug){
-        println("Fahrzeug ${fahrzeug.bezeichner} wird zurück gegeben...")
+        println("${fahrzeug.bezeichner} wird zurückgegeben.")
         fahrzeug.istVermietet = false
-        println("${fahrzeug.bezeichner} ist vermietet? -> ${fahrzeug.istVermietet}")
     }
 
-    fun printVermieteteFahrzeuge(fahrzeuge: MutableList<Fahrzeug>) {
-        // fahrzeuge.forEach { if (it.istVermietet) println(it.bezeichner)}
+    fun getVerfuegbareFahrzeuge(fahrzeuge: MutableList<Fahrzeug>): MutableList<Fahrzeug>{
+        return alleFahrzeuge.filter { !it.istVermietet }.toMutableList()
+    }
 
-        for (fahrzeug in fahrzeuge){
-            if (fahrzeug.istVermietet) {
-                println(fahrzeug.bezeichner)
-            }
-        }
+    fun getVermieteteFahrzeuge(fahrzeuge: MutableList<Fahrzeug>): MutableList<Fahrzeug>{
+        return alleFahrzeuge.filter { it.istVermietet }.toMutableList()
+    }
+
+    fun printFahrzeugDetails(fahrzeug: Fahrzeug){
+        fahrzeug.printDetails()
+    }
+
+    fun getAlleFahrzeuge(): MutableList<Fahrzeug> {
+        return alleFahrzeuge
     }
 
     fun printFahrzeuge(fahrzeuge: MutableList<out Fahrzeug>){
@@ -74,17 +86,21 @@ class Fahrzeugverleih {
 
 }
 
+
 fun main(){
-    var verleih = Fahrzeugverleih()
+    var verleih = Fahrzeigverleih()
+    var alleFahrzeuge = verleih.getAlleFahrzeuge()
 
-    var bmw = verleih.alleFahrzeuge[0]
+    var bmw = verleih.getAlleFahrzeuge()[0]
     verleih.vermieten(bmw)
-
     bmw.istVermietet // true
 
-    verleih.zurueckBringen(bmw)
 
-    bmw.istVermietet // false
+    verleih.getVerfuegbareFahrzeuge(alleFahrzeuge)
+    verleih.getVermieteteFahrzeuge(alleFahrzeuge)
+    verleih.printFahrzeugDetails(bmw)
+    verleih.removeFahrzeug(alleFahrzeuge.last())
+
 
 
 

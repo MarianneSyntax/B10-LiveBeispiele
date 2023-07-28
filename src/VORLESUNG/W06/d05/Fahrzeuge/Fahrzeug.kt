@@ -10,11 +10,11 @@ open class Fahrzeug(val bezeichner: String, protected val maxKmH: Int, var preis
     // tertiärer konstruktor: bekommt nur bezeichner, rest default
     constructor(bezeichner: String): this(bezeichner,150,10000.00,4)
 
-    fun getMaxGeschwindigkeit(): Int {
+    open fun getMaxGeschwindigkeit(): Int {
         return this.maxKmH
     }
 
-     open fun printInfo(){
+     open fun printDetails(){
         println("--Fahrzeug Details--")
         println("Name: $bezeichner")
         println("Maximalgeschwindkeit: $maxKmH km/h")
@@ -38,7 +38,7 @@ fun main(){
     var kmhFahrzeugPrimKonst = fahrzeugPrimKonst.getMaxGeschwindigkeit()
     println("Maximale Geschwindigkeit ${fahrzeugPrimKonst.bezeichner}: $kmhFahrzeugPrimKonst")
 
-    fahrzeugPrimKonst.printInfo()
+    fahrzeugPrimKonst.printDetails()
     fahrzeugPrimKonst.testDrive()
 
 }

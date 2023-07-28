@@ -12,9 +12,9 @@ open class LandFahrzeug(bezeichner: String, maxKmh: Int, price: Double, override
 
     }
 
-    override fun printInfo() {
+    override fun printDetails() {
         println("---Landfahrzeug Details---")
-        super.printInfo()
+        super.printDetails()
 
     }
 
@@ -28,9 +28,9 @@ fun main(){
     var fahrzeugSekKonst = Fahrzeug("Motorrad",2)
 
     stadtBus.testDrive()
-    stadtBus.printInfo()
+    stadtBus.printDetails()
     println("---------")
-    fahrzeugSekKonst.printInfo()
+    fahrzeugSekKonst.printDetails()
 
     stadtBus.getMaxGeschwindigkeit()
     stadtBus.istVermietet // false

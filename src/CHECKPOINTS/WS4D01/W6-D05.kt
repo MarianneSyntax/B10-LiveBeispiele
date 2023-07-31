@@ -1,5 +1,5 @@
 package CHECKPOINTS.WS4D01
-// PA
+// PA Vererbung
 //Musterlösung Streichelzoo
 
 

@@ -1,4 +1,4 @@
-import VORLESUNG.W07.Tier
+package VORLESUNG.W07.WiederholungStreichelzoo
 
 class Kuh : Tier {
 

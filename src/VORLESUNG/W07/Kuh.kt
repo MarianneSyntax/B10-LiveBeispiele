@@ -1,3 +1,5 @@
+import VORLESUNG.W07.Tier
+
 class Kuh : Tier {
 
     var gibtMilch: Boolean
@@ -11,11 +13,11 @@ class Kuh : Tier {
         println("Muuuh")
     }
 
-    fun melken(besucher: Besucher) {
+    fun melken() {
         if (gibtMilch) {
-            println("${besucher.name} melkt das Tier $name und erhält einen Eimer voll Milch!")
+            println("Besucher melkt das Tier $name und erhält einen Eimer voll Milch!")
         } else {
-            println("$name schaut ${besucher.name} komisch an. Hier gibt es keine Milch zu holen.")
+            println("$name schaut Besucher komisch an. Hier gibt es keine Milch zu holen.")
         }
     }
 }

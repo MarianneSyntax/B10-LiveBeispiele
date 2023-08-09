@@ -31,7 +31,7 @@ fun main(){
 
     var pokemonList: MutableList<Pokemon> = mutableListOf(bisasam,taubsi,tauboga,rattfratz,schillock)
 
- //   schillock.flaechenAttacke(pokemonList)
+    // schillock.flaechenAttacke(pokemonList)
 
     // informationen aus der Liste printen: Schleife
    printAllPokemon(pokemonList)

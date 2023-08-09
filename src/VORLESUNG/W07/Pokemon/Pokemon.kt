@@ -1,114 +1,77 @@
-package VORLESUNG.W07.Pokemon
+// Primärer Konstruktor: direkt beim Erstellen der Klasse
+class Pokemon(var name: String, var type: String, var level: Int = 1) {
 
-open class Pokemon(var name: String, var type: String, var level: Int = 1) {
     var hp: Int
     var ep: Int
     var ap: Int
 
+    // init Block: da der Primäre Konstruktor keinen eigenen Körper hat (der Körper ist ja einfach die gesamte Klasse), brauchen wir den init Block. Der wird, wie die Körper der sekundären Konstruktrionen, immer bei Initialisieren = Erstellen eines konkreten Pokemons aufgerufen
     init {
-        hp = level * 10
-        ep = 0
-        ap = level * 3
-        println("--Initialisierung--")
+        this.hp = level*10
+        this.ep = 0
+        this.ap = level*3
+
+        println("----Primärer Konstruktor Call im init-Block----")
         println("Pokemon $name wurde auf Level $level initialisiert.")
         Thread.sleep(500)
         println("$name hat $ap AP und folgende Attacken:")
         Thread.sleep(500)
-        println("Tackle (${level + ap} Schaden)")
+        println("Tackle (${level+ap} Schaden)")
         Thread.sleep(500)
-        println("--Initialisierung beendet--")
+        println("--Primäre Konstruktion beendet--")
+
     }
 
-    constructor(name: String): this(name,"Normal"){
-        println("-Sekundäre Initialisierung-")
-        println("Ein Pokemon namens $name ohne Typ wurde angelegt.")
-        println("Das Pokemon erhält den Typ 'Normal'")
-        println("-Sekundäre Initialisierung beendet-")
+    fun flaechenAttacke(gegnerList: MutableList<Pokemon>){
+        for (gegner in gegnerList){
+            tackle(gegner)
+        }
     }
 
-    constructor(name: String, gender: String) : this(name, "Normal",1) {
-        println("- Tertiäre Initialisierung-")
-        println("Das Geschlecht von $name ist $gender")
-        println("-Tertiäre Initialisierung beendet-")
+    fun levelUp(){
+        if (this.ep >= 10) {
+            println("$name hat $ep EP, das heißt es wird hochgelevelt!")
+            println("Vorheriges Level: $level")
+            this.level += 1
+            ep = ep-10
+            println("Neues Level: $level")
+            println("Neuer EP Stand: $ep")
+        }
     }
 
-
-
-
-
-    fun tackle(gegner: Pokemon) {
-        println("$name greift mit Tackle an!")
-        gegner.hp -= (level+4)
-        gegner.checkHP()
-        println("${gegner.name} verliert ${level+ap} HP und hat noch ${gegner.hp} HP!")
-        gainEP(level+ap)
-    }
-
-    fun checkHP() {
-        if (hp >= 0) {
-            println("$name hat noch $hp HP.")
-        } else println("$name hat keine HP übrig!")
+    fun tackle(gegner: Pokemon){
+        println("$name greift mit Tackle ($ap Schaden) an!")
+        // gegner verliert hp:
+        gegner.hp -= ap
+        println("${gegner.name} hat $ap HP verloren und jetzt noch ${gegner.hp} übrig!")
+        gainEP(ap*4)
+        levelUp()
     }
 
     fun gainEP(ep: Int) {
         this.ep += ep
-        println("$name hat $ep EP erhalten.")
-
-        if (this.ep >= 10) {
-            levelUp()
-        } else println("Noch ${10-ep} EP bis zum nächsten Level!")
+        println("$name hat $ep EP erhalten und jetzt ${this.ep} EP.")
 
     }
 
-    private fun levelUp() {
-        level++
-        ep = 10-ep
-        ap += 5
-        println("$name hat das Level erhöht! Es ist jetzt auf Level $level.")
-    }
 
-    open fun chooseAttack(gegner: Pokemon) {
-        printAttacks()
-        var choice = readln().toInt()
-        when (choice){
-            1 -> tackle(gegner)
-        }
-    }
-
-    fun heuler(gegner: Pokemon) {
-        println("$name greift mit Heuler an!")
-        println("$name stößt ein schrilles Kreischen aus. Es ist nicht besonders effektiv!")
-        gegner.hp -= (level-1)
-        println("${gegner.name} hat noch ${gegner.hp} HP")
-    }
-
-    open fun printAttacks() {
-        println("$name greift an! Wähle eine Attacke aus:")
+    // seknundärer Konstruktor
+    constructor(name: String) : this(name, "Normal"){
+        println("---Sekundärer Konstruktor Call---")
         Thread.sleep(500)
-        println("[1] -> Tackle (${level+4} Schaden")
-
+        println("Ein Pokemon namens $name mit Default den Typ 'Normal' wurde angelegt.")
+        Thread.sleep(500)
+        println("---Sekundäre Konstruktion beendet---")
     }
 
-    fun randomAttack(gegner: Pokemon) {
-        var random = listOf(1,2).random()
-        when(random){
-            1 -> tackle(gegner)
-            2 -> heuler(gegner)
-        }
+    // dritter construktor
+    constructor(name: String, gender: Boolean) : this(name,"Wasser") {
+        Thread.sleep(500)
+        println("--Tertiär Konstruktor Call--")
+        Thread.sleep(500)
+        println("Pokemon mit Namen $name und Geschlecht $gender (true = w, false = m) erstellt.")
+        Thread.sleep(500)
+        println("--Tertiär Konstruktion beendet--")
     }
 
-    fun stillAlive() : Boolean {
-        if (hp <= 0) {
-            println("$name's HP sind unter 0 gefallen! $name ist besiegt!")
-            return false
-        }
-        else return true
-    }
 }
-
-
-
-    fun main() {
-        val taubsiW = Pokemon("Taubsi", "w")
-    }
-

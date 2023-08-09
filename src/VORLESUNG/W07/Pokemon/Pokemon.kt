@@ -1,4 +1,4 @@
-package VORLESUNG.W07.WiederholungKlassen
+package VORLESUNG.W07.Pokemon
 
 open class Pokemon(var name: String, var type: String, var level: Int = 1) {
     var hp: Int

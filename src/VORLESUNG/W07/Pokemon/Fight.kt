@@ -1,4 +1,4 @@
-package VORLESUNG.W07.WiederholungKlassen
+package VORLESUNG.W07.Pokemon
 
 
 fun choosePokemon(): Pokemon {

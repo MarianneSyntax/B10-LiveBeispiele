@@ -1,4 +1,4 @@
-package VORLESUNG.W07.WiederholungKlassen
+package VORLESUNG.W07.Pokemon
 
 class PflanzenPokemon(name: String, level: Int) : Pokemon(name,"Pflanze", level) {
 

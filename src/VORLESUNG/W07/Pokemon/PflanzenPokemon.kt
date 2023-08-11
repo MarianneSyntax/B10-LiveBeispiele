@@ -14,13 +14,31 @@ class PflanzenPokemon(name: String, level: Int): Pokemon(name,"Pflanze",level) {
     override fun chooseAttack(gegner: Pokemon) {
         // super.chooseAttack(gegner)
         printAttacks()
-        var choice = readln().toInt()
-        when(choice){
-            1 -> tackle(gegner)
-            2 -> rasierBlatt(gegner)
-            3 -> solarStrahl(gegner)
+        var inputFalse = true
+        while (inputFalse) {
+            // Fehler abfangen
+            // Option 1: try catch
+            try {
+                val choice = readln().toIntOrNull() // Option 2: toIntOrNull() benutzen
+                when (choice) {
+                    1 -> tackle(gegner)
+                    2 -> rasierBlatt(gegner)
+                    3 -> solarStrahl(gegner)
+                   //  null -> chooseAttack(gegner) - Teil von Option 2
+                }
+                // Option 3: while Schleife um try catch mit Hilfsvariable
+               inputFalse = false
+            } catch (ausnahme: Exception) {
+                println("Ups! $ausnahme")
+                println("Ungültige Eingabe, du musst eine Zahl zwischen 1-3 eingeben. Versuch's nochmal!")
+                printAttacks()
+                // Option 4 Default Wert nehmen statt nochmal zurückzugehen
+                // println("Du hast keien gültige Eingabe gemacht. Per Default greift $name mit Tackle an!")
+                // tackle(gegner)
+                // chooseAttack(gegner) -> Funktion von vorne starten
+            }
         }
-
+        // hier geht's weiter
     }
 
     fun solarStrahl(gegner: Pokemon) {

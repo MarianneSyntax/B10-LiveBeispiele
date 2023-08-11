@@ -89,6 +89,7 @@ open class Pokemon(var name: String, var type: String, var level: Int = 1) {
     // chooseAttack
     open fun chooseAttack(gegner: Pokemon){
         printAttacks()
+
         var choice = readln().toInt()
         when(choice){
             1 -> tackle(gegner)

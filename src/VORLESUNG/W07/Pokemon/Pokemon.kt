@@ -3,15 +3,15 @@ import VORLESUNG.W07.Pokemon.Type
 // Primärer Konstruktor: direkt beim Erstellen der Klasse
 open class Pokemon(var name: String, var type: Type, var level: Int = 1) {
 
-    var hp: Int // Health Points = Lebenspunkte
-    var ep: Int // Experience Points
-    var ap: Int // Attack Points
+    var hp: Double // Health Points = Lebenspunkte
+    var ep: Double // Experience Points
+    var ap: Double // Attack Points
 
     // init Block: da der Primäre Konstruktor keinen eigenen Körper hat (der Körper ist ja einfach die gesamte Klasse), brauchen wir den init Block. Der wird, wie die Körper der sekundären Konstruktoren, immer beim Initialisieren = Erstellen eines konkreten Pokemons aufgerufen
     init {
-        this.hp = level*10
-        this.ep = 0
-        this.ap = level*3
+        this.hp = level*10.0
+        this.ep = 0.0
+        this.ap = level*3.0
 
         println("----Primärer Konstruktor Call im init-Block----")
         println("Pokemon $name wurde auf Level $level initialisiert.")
@@ -73,11 +73,11 @@ open class Pokemon(var name: String, var type: Type, var level: Int = 1) {
         gegner.hp -= ap
         println("${gegner.name} hat $ap HP verloren und jetzt noch ${gegner.hp} übrig!")
         Thread.sleep(500)
-        gainEP(ap*2)
+        gainEP(ap*2.0)
         levelUp()
     }
 
-    fun gainEP(ep: Int) {
+    fun gainEP(ep: Double) {
         this.ep += ep
         println("$name hat $ep EP erhalten!")
     }

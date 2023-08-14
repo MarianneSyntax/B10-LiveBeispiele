@@ -110,4 +110,49 @@ open class Pokemon(var name: String, var type: Type, var level: Int = 1) {
         }
     }
 
+    open fun calculateAP(gegner: Pokemon){
+
+        // wenn this pflanze
+            // gegner feuer
+                // unsere attacken -20%
+                // gegner attacken +20%
+            // gegner wasser
+                // unsere attacken +20%
+                // gegner attacken -20%
+
+        // etc
+
+        if (this.type == Type.FEUER){
+            when(gegner.type){
+                Type.WASSER -> {
+                    this.ap *= 0.8
+                    gegner.ap *= 1.2
+                }
+                Type.PFLANZE -> {
+                    this.ap *= 1.2 // this ist 20% stärker
+                    gegner.ap *= 0.8 // gegner ist 20% schwächer
+                }
+                // deckt Feuer und Normal ab
+                else -> return
+
+            }
+
+        } else if (this.type == Type.WASSER) {
+            when (gegner.type){
+                Type.PFLANZE -> {
+                    this.ap *= 0.8
+                    gegner.ap *= 1.2
+                }
+                Type.FEUER -> {
+                this.ap *= 1.2
+                gegner.ap *= 0.8
+                }
+                // deckt Feuer und Normal ab
+                else -> return
+        }
+
+        }
+
+    }
+
 }

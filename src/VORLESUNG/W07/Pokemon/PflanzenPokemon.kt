@@ -61,5 +61,13 @@ class PflanzenPokemon(name: String, level: Int): Pokemon(name, Type.PFLANZE,leve
          levelUp()
     }
 
+    override fun calculateAP(gegner: Pokemon) {
+        when (gegner.type){
+            Type.FEUER -> ap *= 0.8
+            Type.WASSER -> ap *= 1.2
+            else -> ap *= 1.0
+        }
+    }
+
 
 }

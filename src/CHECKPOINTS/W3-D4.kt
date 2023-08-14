@@ -9,7 +9,7 @@ import CHECKPOINTS.Musterloesungen.Videothek.filmListe
 //CECKLISTE Funktionen
 
 // BASIC:
-// 1. Funktionen erstellen und Funktionen in der main() aufrufen (Programmfluss)
+// 1. Funktionen erstellen und Funktionen in der VORLESUNG.W08.`Enums-Pokemon`.main() aufrufen (Programmfluss)
 // 2. Scopes
 // 3. return vs. void
 // 4. Funktionen als Wert abspeichern
@@ -48,7 +48,7 @@ fun addition() {            // Funktion1
 fun subtraktion(){          // Funktion2
     zahl1 - zahl2
 }
-fun main() {
+fun VORLESUNG.W08.`Enums-Pokemon`.main() {
     addition()              // Funktion1 aufrufen
     subtraktion()           // Funktion2 aufrufen
 
@@ -70,7 +70,7 @@ fun addition1(): Int {            // return-Funktion (mit Rückgabewert)
     var ergebnis: Int = zahl1 + zahl2
     return ergebnis
 }
-fun main(){
+fun VORLESUNG.W08.`Enums-Pokemon`.main(){
     println(addition())              // Funktion aufrufen
     println(addition1())
 }
@@ -84,7 +84,7 @@ fun addition():Int {            // Funktion-Addition
     var ergebnis:Int = zahl1 + zahl2
     return ergebnis
 }
-fun main(){
+fun VORLESUNG.W08.`Enums-Pokemon`.main(){
     var summe: Int = addition()              // summe = 5   --> addition() als Wert in summe gespeichert
     var doppelt: Int = addition() * 2        // jede Zahl doppelt
 }
@@ -95,7 +95,7 @@ fun main(){
 fun addition(zahl1:Int, zahl2:Int) {            // Funktion mit zwei Parameter
     var ergebnis: Int = zahl1 + zahl2
 }
-fun main(){
+fun VORLESUNG.W08.`Enums-Pokemon`.main(){
     addition(2,3)                           // Vorteil Funktion: nur einmal schreiben und immer wieder benutzen
     addition(40,1)
     addition(1,9)
@@ -107,7 +107,7 @@ fun main(){
 fun parameter(x: String, y: MutableList<List<Int>>){        // bekommt eine MutableList übergeben, deren einzelnen Values eine Liste ist
     println(y)
 }
-fun main(){
+fun VORLESUNG.W08.`Enums-Pokemon`.main(){
     val liste: List<Int> = listOf(1,2,3,4,5)
     val mListe1: MutableList<List<Int>> = mutableListOf(liste,liste,liste)
     parameter("Hallo", mListe1)
@@ -116,7 +116,7 @@ fun main(){
 
 /*
 //TODO 7: verkettete Funktionen
-fun main(){
+fun VORLESUNG.W08.`Enums-Pokemon`.main(){
     val liste: List<Int> = listOf(1,2,3,4,5)
     liste.toMutableList().toString()
     liste.toMutableList().removeAt(1)

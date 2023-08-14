@@ -1,7 +1,9 @@
+import VORLESUNG.W07.Pokemon.Type
+
 fun main(){
 
     var bisasam = PflanzenPokemon("Bisasam",2)
-    var glumanda = Pokemon("Glumanda")
+    var glumanda = Pokemon("Glumanda", Type.FEUER)
 
     println("----FIGHT!!!!!----")
     fight(bisasam,glumanda)

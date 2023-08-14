@@ -1,5 +1,7 @@
+import VORLESUNG.W07.Pokemon.Type
+
 // Primärer Konstruktor: direkt beim Erstellen der Klasse
-open class Pokemon(var name: String, var type: String, var level: Int = 1) {
+open class Pokemon(var name: String, var type: Type, var level: Int = 1) {
 
     var hp: Int // Health Points = Lebenspunkte
     var ep: Int // Experience Points
@@ -24,7 +26,7 @@ open class Pokemon(var name: String, var type: String, var level: Int = 1) {
 
 
     // sekundärer Konstruktor
-    constructor(name: String) : this(name, "Normal"){
+    constructor(name: String) : this(name, Type.NORMAL){
         println("---Sekundärer Konstruktor Call---")
        // Thread.sleep(500)
         println("Ein Pokemon namens $name mit Default den Typ 'Normal' wurde angelegt.")
@@ -33,7 +35,7 @@ open class Pokemon(var name: String, var type: String, var level: Int = 1) {
     }
 
     // dritter Konstruktor
-    constructor(name: String, gender: Boolean) : this(name,"Wasser") {
+    constructor(name: String, gender: Boolean) : this(name,Type.WASSER) {
        // Thread.sleep(500)
         println("--Tertiär Konstruktor Call--")
        // Thread.sleep(500)

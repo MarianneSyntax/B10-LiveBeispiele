@@ -1,7 +1,6 @@
+import VORLESUNG.W07.Pokemon.Type
 
-
-
-class PflanzenPokemon(name: String, level: Int): Pokemon(name,"Pflanze",level) {
+class PflanzenPokemon(name: String, level: Int): Pokemon(name, Type.PFLANZE,level) {
 
 
     override fun printAttacks() {
